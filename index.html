@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Rainbow Letter Tracing</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <h1>Rainbow Letter Tracing</h1>
+        <p>Pick a color and trace the letter.</p>
+      </header>
+
+      <section class="panel controls" aria-label="Tracing Controls">
+        <div class="letter-box">
+          <span class="label">Trace This Letter</span>
+          <strong id="current-letter" aria-live="polite">A</strong>
+        </div>
+
+        <div class="selector-row">
+          <label for="letter-select">Choose a Letter</label>
+          <select id="letter-select" class="letter-select" aria-label="Choose a letter"></select>
+        </div>
+
+        <div class="buttons">
+          <button id="speak-btn" class="action">Say Letter</button>
+          <button id="clear-btn" class="action">Clear</button>
+          <button id="random-btn" class="action primary">Random Letter</button>
+        </div>
+      </section>
+
+      <section class="panel palette" aria-label="Color Palette">
+        <h2>Color Brush</h2>
+        <div id="color-picker" class="swatches"></div>
+      </section>
+
+      <section class="panel tracing-area" aria-label="Letter tracing board">
+        <div class="board-wrap" id="board-wrap">
+          <canvas id="guide-canvas" aria-hidden="true"></canvas>
+          <canvas id="draw-canvas" aria-label="Trace the letter area"></canvas>
+          <div id="celebrate" class="celebrate" aria-hidden="true">Awesome!</div>
+        </div>
+      </section>
+
+      <section class="panel feedback-panel" aria-label="Tracing Feedback">
+        <p id="status-text" class="status-text">Start tracing!</p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
